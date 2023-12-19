@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.76.0'
+project:
+    name: Clean-Energy-Program-Management-Console
+    package:
+        name: Clean-Energy-Program-Management-Console
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Clean-Energy-Program-Management-Console/tests
+            options:
+                outputdir: robot/Clean-Energy-Program-Management-Console/results
+
+    robot_testdoc:
+        options:
+            path: robot/Clean-Energy-Program-Management-Console/tests
+            output: robot/Clean-Energy-Program-Management-Console/doc/Clean-Energy-Program-Management-Console_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
